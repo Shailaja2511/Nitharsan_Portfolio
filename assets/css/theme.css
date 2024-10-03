@@ -1528,8 +1528,8 @@ button.mfp-close:hover {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 20px; /* Adjust space between grid items */
+  grid-template-columns: repeat(3, 1fr); /* Two columns */
+  gap: 10px; /* Adjust space between grid items */
 }
 .portfolio-grid img {
   width: 100%; /* Ensures the image takes full width of the container */
