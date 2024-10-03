@@ -1,10 +1,5 @@
 /*================================================
-*
-* Template name : Gray
-* Version       : 1.3.1
-* Author        : FlaTheme
-* Author URL    : http://themeforest.net/user/flatheme
-*
+
 * Table of Contents :
 * 1.  Page Preloader
 * 2.  Scroll Anchors
@@ -47,40 +42,40 @@ $('a[href^=\\#]').on('click', function(event){
 /*===============================================
   3. Toggle Menu
 ===============================================*/
-var toggleMenu = $(".toggle-menu");
+// var toggleMenu = $(".toggle-menu");
 
-if (toggleMenu.length) {
-  var toggleBtn = $(".menu-dots");
-  var toggleClose = $(".toggle-close");
-  //
-  // Open //
-  //
-  toggleBtn.on("click", function() {
-    if (toggleMenu.hasClass("show")) {
-      toggleMenu.removeClass("show");
-      toggleBtn.removeClass("active");
-    }
-    else {
-      toggleMenu.addClass("show");
-      toggleBtn.addClass("active");
-    }
-  });
-  //
-  // Close //
-  //
-  toggleClose.on("click", function() {
-    toggleMenu.removeClass("show");
-    toggleBtn.removeClass("active");
-  });
-  $(document).on("click", function(e) {
-    if ( $(e.target).closest(".toggle-menu, .menu-dots").length === 0 ) {
-      if (toggleMenu.hasClass("show")) {
-        toggleMenu.removeClass("show");
-        toggleBtn.removeClass("active");
-      }
-    }
-  });
-}
+// if (toggleMenu.length) {
+//   var toggleBtn = $(".menu-dots");
+//   var toggleClose = $(".toggle-close");
+//   //
+//   // Open //
+//   //
+//   toggleBtn.on("click", function() {
+//     if (toggleMenu.hasClass("show")) {
+//       toggleMenu.removeClass("show");
+//       toggleBtn.removeClass("active");
+//     }
+//     else {
+//       toggleMenu.addClass("show");
+//       toggleBtn.addClass("active");
+//     }
+//   });
+//   //
+//   // Close //
+//   //
+//   toggleClose.on("click", function() {
+//     toggleMenu.removeClass("show");
+//     toggleBtn.removeClass("active");
+//   });
+//   $(document).on("click", function(e) {
+//     if ( $(e.target).closest(".toggle-menu, .menu-dots").length === 0 ) {
+//       if (toggleMenu.hasClass("show")) {
+//         toggleMenu.removeClass("show");
+//         toggleBtn.removeClass("active");
+//       }
+//     }
+//   });
+// }
 
 /*===============================================
   4. Mobile Menu
@@ -210,6 +205,36 @@ if (pGrid.length) {
   });
 }
 
+// var mixer = mixitup('.portfolio-grid', {
+//   selectors: {
+//     target: '.portfolio-item'
+//   },
+//   animation: {
+//     duration: 250
+//   }
+// });
+
+// Initialize MixItUp for the portfolio grid
+// var mixer = mixitup('.portfolio-grid', {
+//   selectors: {
+//       target: '.portfolio-item'
+//   },
+//   animation: {
+//       duration: 300
+//   },
+//   load: {
+//       filter: '.category-1' // Set default filter to the first category
+//   }
+// });
+
+// Add click event for filter buttons
+document.querySelectorAll('.filter ul li').forEach(function(button) {
+  button.addEventListener('click', function() {
+      const filterValue = this.getAttribute('data-filter');
+      mixer.filter(filterValue);
+  });
+});
+
 
 /*===============================================
   9. Lightbox
@@ -307,36 +332,45 @@ $("#contactform").on("submit", function(e) {
   e.preventDefault();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to handle filtering
+  function filterImages(filterClass) {
+      const allImages = document.querySelectorAll('.portfolio-grid > div');
+      
+      allImages.forEach(image => {
+          image.style.display = 'none'; // Hide all images
+      });
 
-/*===============================================
-  11. Google Maps
-===============================================*/
-var mapCanvas = $(".gmap");
-
-if (mapCanvas.length) {
-  var m,divId,initLatitude, initLongitude, map;
-
-  for (var i = 0; i < mapCanvas.length; i++) {
-    m = mapCanvas[i];
-
-    initLatitude = m.dataset["latitude"];
-    initLongitude = m.dataset["longitude"];
-    divId = "#"+ m["id"];
-
-    map = new GMaps({
-      el: divId,
-      lat: initLatitude,
-      lng: initLongitude,
-      zoom: 16,
-      scrollwheel: false,
-      styles: [
-          /* style your map at https://snazzymaps.com/editor and paste JSON here */
-      ]
-    });
-
-    map.addMarker({
-      lat : initLatitude,
-      lng : initLongitude
-    });
+      // Show only the selected category images
+      const activeImages = document.querySelectorAll(filterClass);
+      activeImages.forEach(image => {
+          image.style.display = 'block'; // Show active category images
+      });
   }
-}
+
+  // Initially show logo images only
+  filterImages('.category-1');
+
+  // Add event listeners to filter buttons
+  const filterButtons = document.querySelectorAll('.filter ul li');
+  filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          const filterClass = this.getAttribute('data-filter');
+          filterImages(filterClass); // Call filter function with the selected category
+      });
+  });
+});
+
+const themeToggleButton = document.querySelector('.theme-toggle');
+const body = document.querySelector('body');
+
+themeToggleButton.addEventListener('click', () => {
+    body.classList.toggle('theme-dark');
+    document.querySelector('.icon-moon').style.display = 
+      body.classList.contains('theme-dark') ? 'none' : 'inline-block';
+    document.querySelector('.icon-sun').style.display = 
+      body.classList.contains('theme-dark') ? 'inline-block' : 'none';
+});
+
+
+

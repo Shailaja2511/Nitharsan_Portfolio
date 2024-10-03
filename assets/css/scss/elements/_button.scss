@@ -56,26 +56,26 @@ a, button {
 		}
 	}
 }
-.theme-dark, 
-.toggle-menu {
-	.button {
-		background: $color-white-015;
-		color: white;
-		&:hover {
-			background: $color-white-02;
-			color: white;
-		}
-	}
-	.button-outline {
-		background: transparent;
-		border: 1px dashed white;
-		color: white;
-		&:hover {
-			background: white;
-			color: black;
-		}
-	}
-}
+// .theme-dark, 
+// .toggle-menu {
+// 	.button {
+// 		background: $color-white-015;
+// 		color: white;
+// 		&:hover {
+// 			background: $color-white-02;
+// 			color: white;
+// 		}
+// 	}
+// 	.button-outline {
+// 		background: transparent;
+// 		border: 1px dashed white;
+// 		color: white;
+// 		&:hover {
+// 			background: white;
+// 			color: black;
+// 		}
+// 	}
+// }
 .button-sm { padding: 10px 22px; }
 .button-lg { padding: 16px 42px; }
 
@@ -121,24 +121,24 @@ a, button {
 		color: white;
 	}
 }
-.theme-dark, 
-.toggle-menu {
-	.button-circle, a.button-circle {
-		background: $color-white-015;
-		border: 0;
-		color: white;
-		&:hover {
-			background: $color-white-02;
-			color: white;
-		}
-	}
-	.button-circle-outline, a.button-circle-outline {
-		background: transparent;
-		border: 1px dashed white;
-		color: white;
-		&:hover {
-			background: white;
-			color: black;
-		}
-	}
-}
+// .theme-dark, 
+// .toggle-menu {
+// 	.button-circle, a.button-circle {
+// 		background: $color-white-015;
+// 		border: 0;
+// 		color: white;
+// 		&:hover {
+// 			background: $color-white-02;
+// 			color: white;
+// 		}
+// 	}
+// 	.button-circle-outline, a.button-circle-outline {
+// 		background: transparent;
+// 		border: 1px dashed white;
+// 		color: white;
+// 		&:hover {
+// 			background: white;
+// 			color: black;
+// 		}
+// 	}
+// }
