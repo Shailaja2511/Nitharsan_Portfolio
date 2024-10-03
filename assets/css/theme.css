@@ -1534,13 +1534,14 @@ button.mfp-close:hover {
 .portfolio-grid img {
   width: 100%; /* Ensures the image takes full width of the container */
   border-radius: 10px; /* Adjust as needed for roundness */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0), 
               inset 0 1px 3px rgba(255, 255, 255, 0.8); /* Soft bevel effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  border: 2px dashed #858383;
 }
 .portfolio-grid img:hover {
   transform: scale(1.05); /* Slightly increase size on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0), 
                 inset 0 1px 3px rgba(255, 255, 255, 0.5); /* Stronger shadow on hover */
 }
 
@@ -1879,6 +1880,9 @@ body.loaded:after {
   border-bottom-right-radius: 0.5em 0.5em;
   border-bottom-left-radius: 0.5em 0.5em;
 }
+.theme-dark .menu-dots{
+  background-color: white;
+}
 .bg-gray {
   background: #f2f5f8;
 }
@@ -2088,8 +2092,9 @@ body.loaded:after {
   display: none;
 }
 
-.theme-dark .icon-sun {
+.theme-dark .icon-sun i {
   display: inline-block;
+  color: black;
 }
 
 
