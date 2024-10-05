@@ -1538,6 +1538,7 @@ button.mfp-close:hover {
               inset 0 1px 3px rgba(255, 255, 255, 0.8); /* Soft bevel effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
   border: 2px dashed #858383;
+  padding: 5px;
 }
 .portfolio-grid img:hover {
   transform: scale(1.05); /* Slightly increase size on hover */
