@@ -132,10 +132,10 @@ var swiper = new Swiper(".clients-swiper", {
       spaceBetween: 40
     }
   },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
 });
 
 var swiper = new Swiper(".testimonial-swiper", {
@@ -162,10 +162,10 @@ var swiper = new Swiper(".testimonial-swiper", {
     nextEl: ".swiper-custom-next",
     prevEl: ".swiper-custom-prev",
   },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
 });
 
 
