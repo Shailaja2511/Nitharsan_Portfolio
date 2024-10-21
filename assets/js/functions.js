@@ -26,7 +26,7 @@ $(window).on("load", function () {
 });
 
 if ($body.attr("data-preloader") === "true") {
-  $body.append($("<div class='preloader'><div><span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span></div></div>"));
+  $body.append($("<div class='preloader'><div><span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span><span>i</span><span>n</span><span>g</span></div></div>"));
 }
 
 
